@@ -19,4 +19,14 @@ fun main(args: Array<String>) {
     var book: Book = Book("Normal people", "Sally Rooney", 2018)
     println(book.titleAndAuthor())
     book.triplePropertiesOfaBook()
+
+    var setOfBooks = setOf( "Hamlet","Macbeth","Romeo and Juliet")
+    var library = mapOf("Shakespeare" to setOfBooks)
+    println(library.any { it.value.contains ("Macbeth") })
+
+    var moreBooks = mutableMapOf<String,String>("Oliver Twist" to "Charles Dickens")
+    moreBooks.getOrPut("Hamlet") { "Shakespeare" }
+    moreBooks.getOrPut("David CopperField") {"Charles Dickens"}
+    println(moreBooks)
+
 }
